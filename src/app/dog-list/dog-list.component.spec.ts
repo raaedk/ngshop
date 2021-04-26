@@ -29,5 +29,11 @@ describe('DogListComponent', () => {
     let dogs : Dog[] = component.getAll();
 
     expect(dogs).toBeDefined();
+  });
+
+  it('get one dog', () => {
+    let dog : Dog = component.dogs[0];
+
+    expect(dog.id).toBeDefined();
   })
 });

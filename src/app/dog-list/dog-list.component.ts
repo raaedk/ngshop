@@ -10,10 +10,13 @@ import { Dog } from "../dogs.service";
 })
 export class DogListComponent implements OnInit {
 
-  constructor(private dogService : DogsService) {}
+  public dogs : Dog[];
+
+  constructor(private dogService : DogsService) {
+    this.dogs = this.getAll();
+  }
 
   ngOnInit(): void {
-
   }
 
   getAll() : Dog[] {
