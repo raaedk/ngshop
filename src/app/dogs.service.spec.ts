@@ -29,12 +29,19 @@ describe('DogsService', () => {
 
     expect(dogs).toBeDefined();
     expect(dogs[0].name).toEqual(dogName);
+  });
+
+  it('failing to get a dog', () => {
+    let dog = service.get('halksdhakljsd');
+
+    expect(dog).toBeUndefined();
   })
 
-  // it('testing the get method', () => {
-  //   let dog : Dog = service.get(dogId);
+  it('testing the get method', () => {
+    let dog : Dog = service.get(dogId);
 
-  //   expect(dogdata).toBeDefined();
-  //   expect(dog.name).toEqual(dogMessage);
-  // });
+    expect(dogdata).toBeDefined();
+    expect(dog.name).toEqual(dogName);
+  });
+ 
 });

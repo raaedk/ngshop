@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Dog } from "../dogs.service"
+
 import { DogListComponent } from './dog-list.component';
 
 describe('DogListComponent', () => {
@@ -22,4 +24,10 @@ describe('DogListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('gets all dogs', () => {
+    let dogs : Dog[] = component.getAll();
+
+    expect(dogs).toBeDefined();
+  })
 });

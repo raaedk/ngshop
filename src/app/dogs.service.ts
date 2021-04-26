@@ -28,7 +28,12 @@ export class DogsService {
     });
   }
 
-  public all() {
+  public all() : Dog[] {
     return Array.from(this.dogData.values());
+  }
+
+  public get(id: string) : Dog {
+    //TODO(andrew): Add handling for invalid ids
+    return this.dogData.get(id);
   }
 }
