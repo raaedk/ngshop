@@ -1,0 +1,11 @@
+.navbar {
+    margin-bottom: 16px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+button {
+    margin-right: 8px;
+}
