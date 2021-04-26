@@ -44,9 +44,18 @@ describe('DogListComponent', () => {
   describe('DogListComponent (html)', () => {
     it('should render', () => {
       let deck = htmlElement.querySelector('.card-columns');
-      expect(deck).toBeDefined();
+      expect(deck).not.toBeNull();
       let card = htmlElement.querySelector('.card');
-      expect(card).toBeDefined();    
+      expect(card).not.toBeNull();  
     });
+
+    it('should render buttons for liking/favoriting cards', () => {
+      let likeButton = htmlElement.querySelector('.like-button');
+      let favButton = htmlElement.querySelector('.fav-button');
+
+      expect(likeButton).not.toBeNull();
+      expect(favButton).not.toBeNull();
+    })
+
   });
 });

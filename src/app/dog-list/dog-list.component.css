@@ -1,0 +1,17 @@
+.button-group {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.like-button {
+    margin-right: 8px;
+}
+
+/* .card-body {
+    justify-content: center;
+} */
+
+.card-image {
+    text-align: center;
+}
