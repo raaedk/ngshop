@@ -22,4 +22,32 @@ export class DogListComponent implements OnInit {
   getAll() : Dog[] {
     return this.dogService.all();
   }
+
+  addLike(dog : Dog) : void {
+    dog.like();
+  }
+
+  addFav(id: string): void {
+    let fav = JSON.parse(localStorage.getItem('favorites'));
+    let favSet : Set<String>;
+
+    if (fav) {
+      favSet = new Set(fav);
+      if (favSet.has(id)) {
+        favSet.delete(id);
+      }
+      else {
+        favSet.add(id);
+      }
+    }
+    else {
+      favSet = new Set();
+      favSet.add(id);
+    }
+
+    // console.log(favSet);
+    localStorage.setItem('favorites', JSON.stringify(Array.from(favSet)));
+  }
+
+  
 }

@@ -6,11 +6,16 @@ export class Dog {
   public id : String;
   public name : String;
   public thumbnail : String;
+  public likes: number = 0;
 
   constructor(id: String, name: String, thumbnail: String) {
     this.id = id;
     this.name = name;
     this.thumbnail = thumbnail;
+  }
+
+  like() {
+    this.likes += 1;
   }
 }
 

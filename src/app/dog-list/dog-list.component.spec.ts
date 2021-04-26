@@ -9,6 +9,8 @@ describe('DogListComponent', () => {
   let fixture: ComponentFixture<DogListComponent>;
   let htmlElement: any;
 
+  const dogId = '4ziNJuYbfDius';
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DogListComponent ]
@@ -19,7 +21,7 @@ describe('DogListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DogListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.autoDetectChanges();
     htmlElement = fixture.nativeElement;
   });
 
@@ -39,6 +41,16 @@ describe('DogListComponent', () => {
   
       expect(dog.id).toBeDefined();
     });
+
+    it(`should add to user's favorites when favorite button is pressed`, () => {
+      localStorage.clear();
+
+      component.addFav(dogId);
+      let mySet : Set<string> = new Set(JSON.parse(localStorage.getItem('favorites')));
+      expect(mySet.has(dogId)).toBeTruthy();
+    });
+
+    
   });
 
   describe('DogListComponent (html)', () => {
