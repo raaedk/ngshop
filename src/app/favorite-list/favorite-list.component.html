@@ -1,1 +1,21 @@
-<p>favorite-list works!</p>
+<div class='card-columns'>
+    <!-- <div class='row'> -->
+        <div class='card' *ngFor="let dog of favDogs">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{dog.name}}</h5>
+                <h5 class="text-center">{{dog.likes}}</h5>
+                <div class='card-image'>
+                  <img class="" src="../../assets/images/shibe.gif">
+                </div>
+
+                <div class='button-group'>
+                    <button type="button" class="btn btn-primary like-button" (click)='addLike(dog)'>Like</button>
+                    <button type="button" class="btn btn-primary fav-button " (click)='addFav(dog.id)'>Remove Favorite</button>
+                </div>
+
+                <!-- <img class="" src={{dog.thumbnail}}> -->
+                <!-- <p class="card-text"></p> -->
+              </div>
+        </div>
+    <!-- </div> -->
+</div>

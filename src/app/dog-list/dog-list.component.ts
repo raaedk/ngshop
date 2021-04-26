@@ -31,7 +31,7 @@ export class DogListComponent implements OnInit {
     let fav = JSON.parse(localStorage.getItem('favorites'));
     let favSet : Set<String>;
 
-    if (fav) {
+    // if (fav) {
       favSet = new Set(fav);
       if (favSet.has(id)) {
         favSet.delete(id);
@@ -39,11 +39,11 @@ export class DogListComponent implements OnInit {
       else {
         favSet.add(id);
       }
-    }
-    else {
-      favSet = new Set();
-      favSet.add(id);
-    }
+    // }
+    // else {
+    //   favSet = new Set();
+    //   favSet.add(id);
+    // }
 
     // console.log(favSet);
     localStorage.setItem('favorites', JSON.stringify(Array.from(favSet)));

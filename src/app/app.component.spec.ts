@@ -59,4 +59,10 @@ describe('AppComponent', () => {
     expect(location.path()).toBe('');
   }));
 
+  it('should navigate to /favorites', fakeAsync( ()=> {
+    router.navigate(['favorite']);
+    tick();
+    expect(location.path()).toBe('/favorite');
+  }));
+
 });

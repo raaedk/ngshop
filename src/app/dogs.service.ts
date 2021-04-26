@@ -3,12 +3,18 @@ import { Injectable } from '@angular/core';
 import dogdata from "./dogdata.json";
 
 export class Dog {
-  public id : String;
-  public name : String;
-  public thumbnail : String;
+  public id : string;
+  public name : string;
+  public thumbnail : string;
   public likes: number = 0;
 
-  constructor(id: String, name: String, thumbnail: String) {
+  constructor(id: string, name: string, thumbnail: string) {
+    let likes = localStorage.getItem(id);
+
+    if (likes) {
+      this.likes = parseInt(likes);
+    }
+
     this.id = id;
     this.name = name;
     this.thumbnail = thumbnail;
@@ -16,6 +22,7 @@ export class Dog {
 
   like() {
     this.likes += 1;
+    localStorage.setItem(this.id, this.likes.toString())
   }
 }
 
