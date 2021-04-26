@@ -2,7 +2,6 @@
     <div class='card' *ngFor="let dog of dogs">
         <div class="card-body">
             <h5 class="card-title text-center">{{dog.name}}</h5>
-            <h5 class="text-center">{{dog.likes}}</h5>
             <div class='card-image'>
                 <img class="" src="../../assets/images/shibe.gif">
             </div>
@@ -11,6 +10,8 @@
                 <button type="button" class="btn btn-primary like-button" (click)='addLike(dog)'>Like</button>
                 <button type="button" class="btn btn-primary fav-button " (click)='addFav(dog.id)'>Favorite</button>
             </div>
+
+            <h5 class="text-center">Likes: {{dog.likes}}</h5>
             </div>
     </div>
 </div>

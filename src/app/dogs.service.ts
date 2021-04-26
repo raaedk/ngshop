@@ -21,7 +21,12 @@ export class Dog {
   }
 
   like() {
-    this.likes += 1;
+    if (localStorage.getItem(this.id)) {
+      return;
+    } else {
+      this.likes += 1;
+    }
+    
     localStorage.setItem(this.id, this.likes.toString())
   }
 }

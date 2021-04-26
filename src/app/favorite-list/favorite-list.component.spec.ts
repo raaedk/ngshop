@@ -34,6 +34,10 @@ describe('FavoriteListComponent', () => {
     expect(dog.id).toEqual(dogId)
   })
 
-  // it("the fav list stores all the dogs", () => {
-  // })
+  it("the fav list stores all the dogs", () => {
+
+    component.addFav(dogId);
+
+    
+  })
 });

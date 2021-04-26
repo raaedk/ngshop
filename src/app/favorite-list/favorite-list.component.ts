@@ -44,6 +44,7 @@ export class FavoriteListComponent implements OnInit {
       favSet = new Set(fav);
       if (favSet.has(id)) {
         favSet.delete(id);
+        this.favDogs = this.favDogs.filter((dog) => dog.id != id)
       }
       else {
         favSet.add(id);

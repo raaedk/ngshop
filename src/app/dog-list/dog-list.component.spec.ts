@@ -50,7 +50,14 @@ describe('DogListComponent', () => {
       expect(mySet.has(dogId)).toBeTruthy();
     });
 
-    
+    it('should increase likes by one when like function is called', () => {
+      let testDog : Dog = component.dogs.find((dog) => dog.id == dogId);
+
+      component.addLike(testDog);
+      expect(testDog.likes).toEqual(1);
+    });
+
+
   });
 
   describe('DogListComponent (html)', () => {
