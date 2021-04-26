@@ -35,9 +35,15 @@ describe('FavoriteListComponent', () => {
   })
 
   it("the fav list stores all the dogs", () => {
-
     component.addFav(dogId);
 
-    
+    // let dog : Dog = component.favDogs.find((dog) => dog.id == dogId);
+
+    // expect(dog).toBeDefined();
+
+    // let noDog : Dog | undefined = component.favDogs.find((dog) => dog.id == dogId);
+
+    // expect(noDog).toBeUndefined();
+
   })
 });

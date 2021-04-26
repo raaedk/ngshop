@@ -57,6 +57,13 @@ describe('DogListComponent', () => {
       expect(testDog.likes).toEqual(1);
     });
 
+    it('should only be possible to like a dog once', () => {
+      let testDog : Dog = component.dogs.find((dog) => dog.id == dogId);
+
+      component.addLike(testDog);
+      component.addLike(testDog);
+      expect(testDog.likes).toEqual(1);
+    });
 
   });
 
